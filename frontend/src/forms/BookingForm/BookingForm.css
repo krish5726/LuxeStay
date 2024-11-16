@@ -1,0 +1,15 @@
+form {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  button:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+  }
+  
+  input:disabled {
+    cursor: not-allowed;
+    background-color: #f3f4f6;
+  }
+  
+  
