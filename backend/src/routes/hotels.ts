@@ -160,13 +160,19 @@ router.post(
         { _id: req.params.hotelId },
         {
           $push: { bookings: newBooking },
-        }
+          $inc: {
+            adultCount: -Math.abs(req.body.adultCount), 
+            childCount: -Math.abs(req.body.childCount) 
+          },
+        },
       );
 
       if (!hotel) {
         return res.status(400).json({ message: "hotel not found" });
       }
 
+      hotel.adultCount = Math.max(0, hotel.adultCount);
+      hotel.childCount = Math.max(0, hotel.childCount);
       await hotel.save();
       res.status(200).send();
     } catch (error) {

@@ -9,7 +9,7 @@ const bookingSchema = new mongoose.Schema<BookingType>({
     adultCount: { type: Number, required: true },
     childCount: { type: Number, required: true },
     checkIn: { type: Date, required: true },
-    checkOut: { type: Date, required: true, min:1, max:5 },
+    checkOut: { type: Date, required: true, min:1},
     userId: { type: String, required: true },
     totalCost: { type: Number, required: true },
 })
