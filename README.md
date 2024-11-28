@@ -11,6 +11,9 @@ This repository contains a **React web application** powered by a backend built 
 - **Backend**:  
   Powered by **Node.js** and **Express**, featuring robust APIs for secure data interaction.
 
+- **End to End Testing**
+  Integrated End to End Tests using Playwright
+
 - **Database**:  
   **MongoDB** is used as the primary database, leveraging its flexibility and scalability.
 
@@ -43,7 +46,7 @@ Before running the application, ensure you have the following installed:
    cd your-repo
    ```
 
-2. Install dependencies for both frontend and backend:
+2. Install dependencies for both frontend, backend and e2e-tests:
    ```bash
    # Navigate to the backend directory and install dependencies
    cd backend
@@ -52,6 +55,11 @@ Before running the application, ensure you have the following installed:
    # Navigate to the frontend directory and install dependencies
    cd ../frontend
    npm install
+
+   # Navigate to the e2e-test directory and install dependencies
+   cd ../e2e-tests
+   npm install
+   npx install playwright
    ```
 
 ---
@@ -99,6 +107,12 @@ Before running the application, ensure you have the following installed:
    ```
 
    This will start the React development server on `http://localhost:5173`.
+
+3. **Run Tests**
+   ```bash
+   cd e2e-tests
+   npx playwright test tests/auth.spec.ts
+   ```
 
 ---
 
